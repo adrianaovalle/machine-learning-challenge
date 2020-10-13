@@ -9,4 +9,4 @@ The classification consisted of:
 * Tuning the models
 * Comparing two or more models
 
-![Figure1](Images/exoplanets.png)
+![Figure1](Images/exoplanets.jpg)
