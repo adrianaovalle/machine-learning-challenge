@@ -14,6 +14,17 @@ The classification consisted of:
 ## Data Preparation
 * The raw data contained 41 features described in the Appendix A.
 * The features related to measurement errors were dircarded, as well as the Planet number. The data for analysis cotains 19 featues after cleaning.
+* All data is numeric, therfore just MinMax Scaling was used.
+
+## Random Forest - First Pass
+* Randon Forest was run with the 19 features.
+* The importance show that 5 parameters are more important than the rest: koi_model_snr, koi_fpflag_nt, koi_fpflag_co, koi_fpflag_ss,Koi_prad
+* Training Data Score: 0.999
+* Testing Data Score: 0.9004. There is probably an overfitting.
+* With hyperparamter tuning the results show that
+
+## Random Forest - Optimized Pass
+
 
 ## Appendix A - Raw Data Description
 Descriptions From: https://exoplanetarchive.ipac.caltech.edu/docs/API_kepcandidate_columns.html#id_col
