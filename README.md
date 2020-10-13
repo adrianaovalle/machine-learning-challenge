@@ -17,13 +17,48 @@ The classification consisted of:
 * All data is numeric, therfore just MinMax Scaling was used.
 
 ## Random Forest - First Pass
-* Randon Forest was run with the 19 features.
+* Random Forest was run with the 19 features.
 * The importance show that 5 parameters are more important than the rest: koi_model_snr, koi_fpflag_nt, koi_fpflag_co, koi_fpflag_ss,Koi_prad
 * Training Data Score: 0.999
 * Testing Data Score: 0.9004. There is probably an overfitting.
-* With hyperparamter tuning the results show that
+* The hyperparamter tuning was used to change the n-estimators, max_features, max_deoth and criterion.
+* Results show that best model training  score is 0.90, with criterion: gini, max_depth:8,  max_features: auto, n_estimators=200.
+* Training Grid Score: 0.9044440205988937
+* Testing Grid Score: 0.8935926773455377
+* Model precision, recall and F1 are good for Confirmed and False Positive disposition, for potential is low.
 
 ## Random Forest - Optimized Pass
+* Random Forest was optimized with fewer features as per importance given in First Pass. Features used: koi_model_snr, koi_fpflag_nt, koi_fpflag_co, koi_fpflag_ss,Koi_prad
+* Training Data Score: 0.985
+* Testing Data Score: 0.856. There is probably an overfitting.
+* The hyperparamter tuning was used to change the n-estimators, max_features, max_deoth and criterion.
+* Results show that best model training score is 0.87, with criterion: gini, max_depth:8,  max_features: log2, n_estimators=600.
+* Training Grid Score: 0.8806027083730689
+* Testing Grid Score: 0.87986270022883
+* Model precsion, recall and F1 are comparable to the first pass of Random Forest.Therefore same results can be achieved with optmized features.
+
+## KNN Model
+* KNN model was run with the 19 features
+* Optimal K was found at 11
+* Training Data Score: 0.83
+* Testing Data Score: 0.79
+* The hyperparamter tuning was used to change the n-neighbors, weights and metric
+* Results show that best model training score is 0.80, with metric: manhattan, n_neighbors:11,  weights: distance
+* Training Grid Score: 1.0
+* Testing Grid Score: 0.8060640732265446. Probably overfitting.
+
+## Neural Networks
+* Preprocessing included additional One-Hot-Encoding for target y.
+* Used 1 layer with 10 units
+* Loss: 0.3721422553062439, Accuracy: 0.807208240032196
+
+## Deeep Neural Networks
+* Preprocessing included additional One-Hot-Encoding for target y.
+* Used 2 layers with 10 and 8 units
+* Loss: 0.26571956276893616, Accuracy: 0.8981693387031555
+
+# Conclusion
+Random Forest First Pass and Deep Neural Networks seem to have best results among models compiled. They both have comparable results.
 
 
 ## Appendix A - Raw Data Description
