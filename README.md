@@ -8,3 +8,5 @@ The classification consisted of:
 * Preprocessing the raw data
 * Tuning the models
 * Comparing two or more models
+
+![Figure1](Images/exoplanets.png)
